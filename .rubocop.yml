@@ -1,9 +1,13 @@
 require:
   - rubocop-rails
   - rubocop-rspec
+  - rubocop-performance
 
 Rails:
   Enabled: true
+
+AllCops:
+  NewCops: enable
 
 Metrics/MethodLength:
   Enabled: false
@@ -100,10 +104,6 @@ Style/BlockDelimiters:
   - let!
   - subject
   - watch
-  IgnoredMethods:
-  - lambda
-  - proc
-  - it
 
 Layout/CaseIndentation:
   EnforcedStyle: end
@@ -285,16 +285,6 @@ Style/NonNilCheck:
 Style/MethodCallWithArgsParentheses:
   Enabled: true
   IgnoreMacros: true
-  IgnoredMethods:
-  - require
-  - require_relative
-  - require_dependency
-  - puts
-  - to
-  - not_to
-  - describe
-  - to_not
-  - shared_examples
   Exclude:
   - '**/Gemfile'
 
@@ -1090,20 +1080,17 @@ RSpec/AlignLeftLetBrace:
 RSpec/MultipleMemoizedHelpers:
   Max: 10
 
-Rails/HasAndBelongsToMany:
-  Enabled: false
-
 RSpec/NestedGroups:
   Max: 6
 
 RSpec/AnyInstance:
-  Enable: true
+  Enabled: true
 
 RSpec/Be:
-  Enable: true
+  Enabled: true
 
 RSpec/ContextMethod:
-  Enable: true
+  Enabled: true
 
 Style/StringHashKeys:
   Enabled: false
